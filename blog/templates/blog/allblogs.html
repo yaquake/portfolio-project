@@ -45,7 +45,7 @@
                 <br />
                 {{ blog.pub_date_pretty }}
                 <br />
-                <img class="img-fluid" src="{{ blog.image.url }}" height="200" width="200" />
+                <img class="img-thumbnail img-fluid" src="{{ blog.image.url }}"  height="200" width="200"/>
                 <br />
                 <p>{{ blog.summary }}</p>
             {% endfor %}
@@ -55,9 +55,9 @@
     <footer class="text-muted">
       <div class="container">
         <p class="float-right">
-          <a href="#">Back to top</a>
+          <a href="#" class="text-center">Back to top</a>
         </p>
-        <p>The website made by Ivan Eresko and Bootstrap v 4.1.1 in {% now "Y" %}</p>
+        <p class="text-center">The website made by Ivan Eresko and Bootstrap v 4.1.1 in {% now "Y" %}</p>
       </div>
     </footer>
 

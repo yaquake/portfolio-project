@@ -56,7 +56,7 @@
               {% for job in jobs.all %}
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="{{ job.image.url }}">
+                <img class="card-img-top img-fluid" src="{{ job.image.url }}" height="200" >
                 <div class="card-body">
                   <p class="card-text">{{  job.summary }}</p>
 
@@ -75,7 +75,7 @@
         <p class="float-right">
           <a href="#">Back to top</a>
         </p>
-        <p>The website made by Ivan Eresko and Bootstrap v 4.1.1 in {% now "Y" %}</p>
+        <p class="text-center">The website made by Ivan Eresko and Bootstrap v 4.1.1 in {% now "Y" %}</p>
       </div>
     </footer>
 
