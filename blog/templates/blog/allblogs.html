@@ -40,7 +40,7 @@
             <h1 class="text-center pt-3">Welcome to Ivan's Blog</h1><br /><br />
             <h2>Latest posts</h2>
             <hr />
-            {% for blog in blogs.all %}
+            {% for blog in blogs.all reversed %}
                 <a href="{% url 'detail' blog.id %}"> <h3>{{ blog.title }}</h3></a>
                 <br />
                 {{ blog.pub_date_pretty }}
