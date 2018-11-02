@@ -6,7 +6,7 @@ import jobs.views
 
 
 urlpatterns = [
-    path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
+    path('admin/', include(admin_honeypot.urls)),
     path('thedawg/', include(admin.site.urls)),
     path('', jobs.views.home, name='home'),
     path('blog/', include('blog.urls')),
