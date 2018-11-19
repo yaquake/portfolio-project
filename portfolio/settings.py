@@ -137,6 +137,10 @@ MEDIA_URL = '/media/'
 
 SUMMERNOTE_CONFIG = {
     'attachment_filesize_limit': 10000000,
+    'summernote': {
+        'width': '100%',
+        'height': '640'
+    }
 }
 
 
