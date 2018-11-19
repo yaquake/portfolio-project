@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'admin_honeypot',
+    "django_summernote",
     'blog.apps.BlogConfig',
     'jobs.apps.JobsConfig',
     'django.contrib.admin',
@@ -133,6 +134,10 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+SUMMERNOTE_CONFIG = {
+    'attachment_filesize_limit': 10000000,
+}
 
 
 try:

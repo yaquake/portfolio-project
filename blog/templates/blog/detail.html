@@ -43,7 +43,7 @@
                 <br />
                 <br />
                 <br />
-                <p>{{ blog.body }}</p>
+                <p>{{ blog.body|safe }}</p>
 
             <a href="{% url 'allblogs' %}">Back to blogs</a>
             <hr />
