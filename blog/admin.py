@@ -9,4 +9,6 @@ class BlogAdmin(SummernoteModelAdmin):
     summernote_fields = ('body', )
 
 
+
+
 admin.site.register(Blog, BlogAdmin)
