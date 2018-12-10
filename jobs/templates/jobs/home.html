@@ -1,7 +1,7 @@
 <!doctype html>
 {% load staticfiles %}
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -11,82 +11,148 @@
     <title>Ivan Eresko</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
-  </head>
+    <style>
+        @font-face {
+            font-family: colus;
+            src: url("{% static 'colus/Colus-Regular.otf' %}");
+        }
 
-  <body>
 
-    <header>
-        <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="{% url 'home' %}">Ivan Eresko</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav ml-auto">
-                    <a class="nav-item nav-link" href="https://www.facebook.com/profile.php?id=100019021544687">Facebook</a>
-                    <a class="nav-item nav-link" href="{% static 'resume.pdf' %}">Resume</a>
-                    <a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
-                    <a class="nav-item nav-link" href="http://project.ivaneresko.info">Project</a>
+        .colus {
+            font-family: colus;
+            font-size: 1.3em;
+            color: #555555;
+        }
 
-                </div>
-            </div>
-      </nav>
-    </header>
+        .jumbotron {
+            background-image: url("{% static 'jumbotron_logo.jpg' %}");
+            background-size: cover;
+            height: 400px;
+        }
 
-    <main role="main">
+        .happy-birthday {
+            width: 70%;
+            height: 250px;
+            background-image: url("{% static 'hb1.JPG' %}");
+            background-size: contain;
+            transition: background-image 0.5s linear;
+            cursor: pointer;
+        }
 
-      <section class="jumbotron text-center">
-        <div class="container">
-          <h1 class="jumbotron-heading">Hi, I'm Ivan</h1>
-          <p class="lead text-muted">Hey, my name is Ivan Eresko and I like to make Django & Flask websites!</p>
-          <img src="{% static 'ivan.jpg' %}" height="300" />
-            <p>
-            <a href="mailto:ivan@programmer.net" class="btn btn-primary my-2">E-mail me!</a>
-          </p>
+        .happy-birthday:hover {
+            background-image: url("{% static 'hb2.jpg' %}");
+        }
 
+
+
+
+    </style>
+</head>
+
+<body class="bg-dark">
+
+
+<div class="container bg-light h-100 text-center">
+    <div class="jumbotron mb-5">
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{% static 'logos/38941059.png' %}" class="img-fluid p-0 m-0 w-100 rounded">
+            <br />
+            <p class="text-left pt-5">
+                <button class="happy-birthday rounded" hidden></button>
+            </p>
         </div>
-      </section>
 
-      <div class="album py-5 bg-light">
-        <div class="container">
 
-          <div class="row">
+        <div class="col-md-6 colus  text-left">
+            <p class="border-bottom" style="font-family: colus; color: #7d0000;">About</p><br/>
+            <ul>
+                <li>
+                    Ivan
+                </li>
+                <li>
+                    Auckland, NZ
+                </li>
+                <li>
+                    Software Developer
+                </li>
+            </ul>
+            <br/><br/>
 
-              {% for job in jobs.all %}
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top img-fluid" src="{{ job.image.url }}" height="200" >
-                <div class="card-body">
-                  <p class="card-text">{{  job.summary }}</p>
+            <p class="border-bottom" style="font-family: colus; color: #7d0000;">Skills</p><br/>
+            <ul>
+                <li>
+                    HTML/CSS, JavaScript, MySQL
+                </li>
+                <li>
+                    Python + Django & Flask
+                </li>
+                <li>
+                    RESTful APIs
+                </li>
+            </ul>
+            <br/><br/>
 
-                </div>
-              </div>
-            </div>
-           {% endfor %}
-          </div>
+
+            <p class="border-bottom" style="font-family: colus; color: #7d0000;">Links</p><br/>
+            <ul>
+                <li><a href="http://project.ivaneresko.info" class="text-info" target="_blank">Internship project</a></li>
+                <li><a href="{% static 'resume.pdf' %}" class="text-muted">Resume</a></li>
+                <li><a href="{% url 'allblogs' %}" class="text-info" target="_blank">Blog</a></li>
+                <li>
+                    <a href="http://vk.com/ivaneresko" target="_blank"><img src="{% static 'logos/vk.png' %}"
+                                                            onmouseover="this.src='{% static 'logos/vk2.png' %}'"
+                                                            onmouseout="this.src='{% static 'logos/vk.png' %}'"
+                                                            width="10%"></a>
+                    <a href="https://www.facebook.com/profile.php?id=100019021544687" target="_blank"><img
+                            src="{% static 'logos/iconfinder_facebook_circle_black_107153.png' %}"
+                            onmouseover="this.src='{% static 'logos/iconfinder_facebook_circle_color_107175.png' %}'"
+                            onmouseout="this.src='{% static 'logos/iconfinder_facebook_circle_black_107153.png' %}'"
+                            width="11%"></a>
+                    <a href="mailto:ivan@programmer.net" target="_blank"><img src="{% static 'logos/email.png' %}"
+                                                              onmouseover="this.src='{% static 'logos/email2.png' %}'"
+                                                              onmouseout="this.src='{% static 'logos/email.png' %}'"
+                                                              width="10%"></a>
+                    <a href="http://github.com/yaquake" target="_blank"><img src="{% static 'logos/github.png' %}"
+                                                             onmouseover="this.src='{% static 'logos/github2.png' %}'"
+                                                             onmouseout="this.src='{% static 'logos/github.png' %}'"
+                                                             width="10%"></a>
+                    <a href="https://www.linkedin.com/in/ivaneresko/" target="_blank"><img src="{% static 'logos/linkedin.png' %}"
+                                                                           width="10%"></a>
+
+                </li>
+            </ul>
         </div>
-      </div>
+    </div>
+    <br/><br/><br/>
 
-    </main>
 
-    <footer class="text-muted">
-      <div class="container">
-        <p class="float-right">
-          <a href="#">Back to top</a>
-        </p>
-        <p class="text-center">The website made by Ivan Eresko and Bootstrap v 4.1.1 in {% now "Y" %}</p>
-      </div>
-    </footer>
+    {#    <div class="flex-row d-flex justify-content-center">#}
+    {#        <div class="vk"></div>#}
+    {#        <div class="fb mx-3"></div>#}
+    {#        <div class="email"></div>#}
+    {#    </div>#}
+</div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
-  </body>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+
+</body>
 </html>
