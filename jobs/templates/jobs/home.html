@@ -52,35 +52,36 @@
     </style>
 </head>
 
-<body class="bg-dark">
+<body style="background-color: #bbbbbb;">
 
 
-<div class="container bg-light h-100 text-center">
-    <div class="jumbotron mb-5">
-    </div>
+<div class="container bg-light h-100 text-center rounded shadow">
+{#    <div class="jumbotron mb-5" style="margin-top: 50%;">#}
+{#    </div>#}
 
 
-    <div class="row">
+    <div class="row pt-5" style="margin-top: 15vh;">
         <div class="col-md-6">
             <img src="{% static 'logos/38941059.png' %}" class="img-fluid p-0 m-0 w-100 rounded">
-            <br />
-            <p class="text-left pt-5">
-                <button class="happy-birthday rounded" hidden></button>
-            </p>
+            <br /><br /><br />
+
+{#            <p class="text-left pt-5">#}
+{#                <button class="happy-birthday rounded" hidden></button>#}
+{#            </p>#}
         </div>
 
 
-        <div class="col-md-6 colus  text-left">
+        <div class="col-md-6  text-left">
             <p class="border-bottom" style="font-family: colus; color: #7d0000;">About</p><br/>
             <ul>
                 <li>
-                    Ivan
+                    <strong>IVAN</strong>
                 </li>
                 <li>
-                    Auckland, NZ
+                    <strong>AUCKLAND, NZ</strong>
                 </li>
                 <li>
-                    Software Developer
+                    <strong>SOFTWARE DEVELOPER</strong>
                 </li>
             </ul>
             <br/><br/>
@@ -88,13 +89,13 @@
             <p class="border-bottom" style="font-family: colus; color: #7d0000;">Skills</p><br/>
             <ul>
                 <li>
-                    HTML/CSS, JavaScript, MySQL
+                    <strong>HTML/CSS, JAVASCRIPT, MySQL</strong>
                 </li>
                 <li>
-                    Python + Django & Flask
+                    <strong>PYTHON + DJANGO & FLASK</strong>
                 </li>
                 <li>
-                    RESTful APIs
+                    <strong>RESTful APIs</strong>
                 </li>
             </ul>
             <br/><br/>
@@ -102,42 +103,36 @@
 
             <p class="border-bottom" style="font-family: colus; color: #7d0000;">Links</p><br/>
             <ul>
-                <li><a href="http://project.ivaneresko.info" class="text-info" target="_blank">Internship project</a></li>
-                <li><a href="{% static 'resume.pdf' %}" class="text-muted">Resume</a></li>
-                <li><a href="{% url 'allblogs' %}" class="text-info" target="_blank">Blog</a></li>
-                <li>
-                    <a href="http://vk.com/ivaneresko" target="_blank"><img src="{% static 'logos/vk.png' %}"
+                <li><a href="http://project.ivaneresko.info" class="text-info" target="_blank"><strong>INTERNSHIP PROJECT</strong></a></li>
+                <li><a href="{% static 'resume.pdf' %}" class="text-info"><strong>RESUME</strong></a></li>
+                <li><a href="{% url 'allblogs' %}" class="text-info" target="_blank"><strong>BLOG</strong></a></li>
+
+            </ul>
+        </div>
+    </div>
+    <a href="http://vk.com/ivaneresko" target="_blank"><img src="{% static 'logos/vk.png' %}"
                                                             onmouseover="this.src='{% static 'logos/vk2.png' %}'"
                                                             onmouseout="this.src='{% static 'logos/vk.png' %}'"
-                                                            width="10%"></a>
+                                                            width="6%"></a>
                     <a href="https://www.facebook.com/profile.php?id=100019021544687" target="_blank"><img
                             src="{% static 'logos/iconfinder_facebook_circle_black_107153.png' %}"
                             onmouseover="this.src='{% static 'logos/iconfinder_facebook_circle_color_107175.png' %}'"
                             onmouseout="this.src='{% static 'logos/iconfinder_facebook_circle_black_107153.png' %}'"
-                            width="11%"></a>
+                            width="7%"></a>
                     <a href="mailto:ivan@programmer.net" target="_blank"><img src="{% static 'logos/email.png' %}"
                                                               onmouseover="this.src='{% static 'logos/email2.png' %}'"
                                                               onmouseout="this.src='{% static 'logos/email.png' %}'"
-                                                              width="10%"></a>
+                                                              width="6%"></a>
                     <a href="http://github.com/yaquake" target="_blank"><img src="{% static 'logos/github.png' %}"
                                                              onmouseover="this.src='{% static 'logos/github2.png' %}'"
                                                              onmouseout="this.src='{% static 'logos/github.png' %}'"
-                                                             width="10%"></a>
+                                                             width="6%"></a>
                     <a href="https://www.linkedin.com/in/ivaneresko/" target="_blank"><img src="{% static 'logos/linkedin.png' %}"
                                                                            width="10%"></a>
-
-                </li>
-            </ul>
-        </div>
-    </div>
     <br/><br/><br/>
 
 
-    {#    <div class="flex-row d-flex justify-content-center">#}
-    {#        <div class="vk"></div>#}
-    {#        <div class="fb mx-3"></div>#}
-    {#        <div class="email"></div>#}
-    {#    </div>#}
+
 </div>
 
 
