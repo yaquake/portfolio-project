@@ -6,6 +6,7 @@ from .models import Blog
 
 
 class BlogAdmin(SummernoteModelAdmin):
+    fields = ['title', 'pub_date', 'image', 'short_description', 'body']
     summernote_fields = ('body', )
 
 
