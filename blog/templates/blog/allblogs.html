@@ -59,11 +59,13 @@
         <div class="col-md-4">
             <img src="{{ blog.image.url }}" height="90%" width="90%" alt="Image"/>
         </div>
-        <div class="col-md-8" style="padding-top: 60px; font-family: Verdana ;">
+        <div class="col-md-8" style="padding-top: 40px; font-family: Verdana ;">
             {% if forloop.counter0|divisibleby:2 %}
+                <a href="{% url 'detail' blog.slug %}" class="text-muted">{{ blog.title }}</a>
                 <p style="font-size: 0.75em;" class="text-muted">{{ blog.pub_date }}</p>
                 <a href="{% url 'detail' blog.slug %}" class="text-muted">{{ blog.short_description }}</a>
             {% elif not forloop.counter0|divisibleby:2 %}
+                <a href="{% url 'detail' blog.slug %}" class="text-light">{{ blog.title }}</a>
                 <p style="font-size: 0.75em; color: #ffffff">{{ blog.pub_date }}</p>
                 <a href="{% url 'detail' blog.slug %}" class="text-light">{{ blog.short_description }}</a>
             {% endif %}
