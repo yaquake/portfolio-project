@@ -87,7 +87,7 @@
                 <p style="font-size: 0.75em;" class="text-muted">{{ blog.pub_date }}</p>
                 <a href="{% url 'detail' blog.slug %}" class="text-muted merriweather">{{ blog.short_description }}</a>
             {% elif not forloop.counter0|divisibleby:2 %}
-                <a href="{% url 'detail' blog.slug %}" class="text-light merriweather">{{ blog.title }}</a>
+                <a href="{% url 'detail' blog.slug %}" class="text-light merriweather bold">{{ blog.title }}</a>
                 <p style="font-size: 0.75em; color: #ffffff">{{ blog.pub_date }}</p>
                 <a href="{% url 'detail' blog.slug %}" class="text-light merriweather">{{ blog.short_description }}</a>
             {% endif %}
