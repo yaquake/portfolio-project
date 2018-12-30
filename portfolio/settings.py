@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+FILE_UPLOAD_PERMISSIONS = 0o644
 
 # Application definition
 
@@ -136,10 +137,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 SUMMERNOTE_CONFIG = {
-    'attachment_filesize_limit': 10000000,
+    'attachment_filesize_limit': 10000 * 10000,
     'summernote': {
         'width': '100%',
-        'height': '640'
+        'height': '1000'
     }
 }
 
