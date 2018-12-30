@@ -140,7 +140,7 @@ SUMMERNOTE_CONFIG = {
     'attachment_filesize_limit': 10000 * 10000,
     'summernote': {
         'width': '100%',
-        'height': '1000'
+        'height': '1800'
     }
 }
 
