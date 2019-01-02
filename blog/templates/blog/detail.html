@@ -37,7 +37,7 @@
 {#    <div class="container">#}
         <nav class=" site-nav navbar navbar-expand-lg navbar-dark sticky-top fixed-top justify-content-center">
             <div class="container merriweather d-flex flex-column flex-md-row justify-content-between">
-            <a class="navbar-brand" href="{% url 'allblogs' %}">Blogs</a>
+            <a class="navbar-brand" href="{% url 'allblogs' 1 %}">Blogs</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -69,7 +69,7 @@
 
                 <p>{{ blog.body|safe }}</p>
 
-            <a href="{% url 'allblogs' %}" class="text-muted"> <- Back to blogs</a>
+            <a href="{% url 'allblogs' 1 %}" class="text-muted"> <- Back to blogs</a>
             <hr />
         </div>
     </main>

@@ -20,6 +20,7 @@
         body {
             font-family: Quicksand, sans-serif;
         }
+
         .container {
             font-family: Merriweather, sans-serif;
         }
@@ -27,6 +28,7 @@
         .merriweather {
             font-family: Merriweather, sans-serif;
         }
+
         .bold {
             font-weight: bold;
         }
@@ -34,81 +36,94 @@
         .blog-dark {
             color: #ffffff;
         }
+
         .site-nav {
-              background-color: rgba(52,58,64, .90);
-              -webkit-backdrop-filter: blur(5px);
-              backdrop-filter: blur(5px);
-          }
+            background-color: rgba(52, 58, 64, .90);
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+        }
 
     </style>
 </head>
 
 <body class="bg-dark">
 
-        <nav class="navbar navbar-expand-lg navbar-dark site-nav sticky-top fixed-top shadow-lg justify-content-center">
-            <div class="container">
-            <a class="navbar-brand" href="{% url 'allblogs' %}">Blogs</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'home' %}">Home </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="http://project.ivaneresko.info">Internship project</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% static 'resume.pdf' %}">Resume</a>
-                    </li>
-
-                </ul>
-            </div>
-            </div>
-        </nav>
+<nav class="navbar navbar-expand-lg navbar-dark site-nav sticky-top fixed-top shadow-lg">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'allblogs' 1 %}">Blogs</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
 
 
-{% for blog in blogs.all reversed %}
-    {% if forloop.counter0|divisibleby:2 %}
-        <div class="container-fluid bg-light">
-    {% elif not forloop.counter0|divisibleby:2 %}
-        <div class="container-fluid bg-dark blog-dark">
-    {% endif %}
-<div class="container">
-    <div class="row py-5 align-itens-center">
-        <div class="col-md-4">
-            <img src="{{ blog.image.url }}" height="90%" width="90%" alt="Image"/>
-        </div>
-        <div class="col-md-8" style="padding-top: 40px; font-family: Verdana ;">
-            {% if forloop.counter0|divisibleby:2 %}
-                <a href="{% url 'detail' blog.slug %}" class="text-muted merriweather bold">{{ blog.title }}</a>
-                <p style="font-size: 0.75em;" class="text-muted">{{ blog.pub_date }}</p>
-                <a href="{% url 'detail' blog.slug %}" class="text-muted merriweather">{{ blog.short_description }}</a>
-            {% elif not forloop.counter0|divisibleby:2 %}
-                <a href="{% url 'detail' blog.slug %}" class="text-light merriweather bold">{{ blog.title }}</a>
-                <p style="font-size: 0.75em; color: #ffffff">{{ blog.pub_date }}</p>
-                <a href="{% url 'detail' blog.slug %}" class="text-light merriweather">{{ blog.short_description }}</a>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">Home </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://project.ivaneresko.info">Internship project</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% static 'resume.pdf' %}">Resume</a>
+                </li>
+
+            </ul>
+            {% if blogs.has_previous %}
+                <a href="{% url 'allblogs' blogs.previous_page_number %}">Previous</a>
             {% endif %}
+            <a href="{% url 'allblogs' blogs.number %}" class="text-light active">Page {{ blogs.number }}</a>
+            {% if blogs.has_next %}
+                <a href="{% url 'allblogs' blogs.next_page_number %}">Next</a>
+        {% endif %}
+            </div>
         </div>
     </div>
-</div>
-</div>
-
-{% endfor %}
+</nav>
 
 
+{% for blog in blogs %}
+    {% if forloop.counter0|divisibleby:2 %}
+        <div class="container-fluid bg-light">
+        {% elif not forloop.counter0|divisibleby:2 %}
+            <div class="container-fluid bg-dark blog-dark">
+        {% endif %}
+        <div class="container">
+            <div class="row py-5 align-itens-center">
+                <div class="col-md-4">
+                    <img src="{{ blog.image.url }}" height="90%" width="100%" alt="Image"/>
+                </div>
+                <div class="col-md-8" style="padding-top: 40px; font-family: Verdana ;">
+                    {% if forloop.counter0|divisibleby:2 %}
+                        <a href="{% url 'detail' blog.slug %}" class="text-muted merriweather bold">{{ blog.title }}</a>
+                        <p style="font-size: 0.75em;" class="text-muted">{{ blog.pub_date }}</p>
+                        <a href="{% url 'detail' blog.slug %}"
+                           class="text-muted merriweather">{{ blog.short_description }}</a>
+                    {% elif not forloop.counter0|divisibleby:2 %}
+                        <a href="{% url 'detail' blog.slug %}" class="text-light merriweather bold">{{ blog.title }}</a>
+                        <p style="font-size: 0.75em; color: #ffffff">{{ blog.pub_date }}</p>
+                        <a href="{% url 'detail' blog.slug %}"
+                           class="text-light merriweather">{{ blog.short_description }}</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        </div>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
-        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-        crossorigin="anonymous"></script>
+        {% endfor %}
+
+
+
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                    crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+                    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+                    crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+                    integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+                    crossorigin="anonymous"></script>
 
 </body>
 </html>

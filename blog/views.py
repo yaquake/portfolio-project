@@ -1,11 +1,13 @@
 from django.shortcuts import render, get_object_or_404
-
+from django.core.paginator import Paginator
 from .models import Blog
 
 
-def allblogs(request):
-    blogs = Blog.objects
-    return render(request, 'blog/allblogs.html', {'blogs': blogs})
+def allblogs(request, page):
+    blogs = Blog.objects.all().order_by("-pub_date")
+    pages = Paginator(blogs, 5)
+    result_page = pages.page(page)
+    return render(request, 'blog/allblogs.html', {'blogs': result_page})
 
 
 def detail(request, slug):
