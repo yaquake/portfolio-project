@@ -73,7 +73,7 @@
             {% if blogs.has_previous %}
                 <a href="{% url 'allblogs' blogs.previous_page_number %}">Previous</a>
             {% endif %}
-            <a href="{% url 'allblogs' blogs.number %}" class="text-light active">Page {{ blogs.number }}</a>
+            <a href="{% url 'allblogs' blogs.number %}" class="text-light active">Page {{ blogs.number }} of {{ blogs.end_index }}</a>
             {% if blogs.has_next %}
                 <a href="{% url 'allblogs' blogs.next_page_number %}">Next</a>
         {% endif %}
