@@ -11,7 +11,8 @@ class Blog(models.Model):
     slug = models.SlugField(unique=True, default=False, blank=True)
 
     def save(self, *args, **kwargs):
-        self.short_description = self.short_description[:200] + "...(continue reading)"
+        if '...(continue reading)' not in self.short_description:
+            self.short_description = self.short_description[:200] + '...(continue reading)'
         self.slug = slugify(self.title[:49])
         super(Blog, self).save(*args, **kwargs)
 
