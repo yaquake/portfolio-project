@@ -1,0 +1,6 @@
+Django==2.1.5
+django-admin-honeypot==1.1.0
+django-summernote==0.8.11.4
+Pillow==5.4.1
+psycopg2-binary==2.7.6.1
+pytz==2018.9
