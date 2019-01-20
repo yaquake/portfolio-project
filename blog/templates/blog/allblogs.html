@@ -71,11 +71,11 @@
 
             </ul>
             {% if blogs.has_previous %}
-                <a href="{% url 'allblogs' blogs.previous_page_number %}">Previous</a>
+                <a href="{% url 'allblogs' blogs.previous_page_number %}" class="text-light">Previous    </a>
             {% endif %}
-            <a href="{% url 'allblogs' blogs.number %}" class="text-light active">Page {{ blogs.number }} of {{ blogs.paginator.num_pages }}</a>
+            <a href="{% url 'allblogs' blogs.number %}" class="text-light disabled">Page {{ blogs.number }} of {{ blogs.paginator.num_pages }}</a>
             {% if blogs.has_next %}
-                <a href="{% url 'allblogs' blogs.next_page_number %}">Next</a>
+                <a href="{% url 'allblogs' blogs.next_page_number %}" class="text-light>    Next</a>
         {% endif %}
             </div>
         </div>
