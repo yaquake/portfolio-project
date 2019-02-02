@@ -20,3 +20,7 @@ local_urls.py
 
 
 # End of https://www.gitignore.io/api/django
+
+178.128.32.86''
+Jan 24 06:56:42 ubuntu-s-1vcpu-1gb-lon1-01 gunicorn[4678]: [2019-01-24 06:56:42 +0000] [4678] [ERROR] Can't connect to
+
