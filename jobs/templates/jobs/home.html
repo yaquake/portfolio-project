@@ -15,25 +15,7 @@
           integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
     <style>
-        @font-face {
-            font-family: colus;
-            src: url("{% static 'colus/Colus-Regular.otf' %}");
-        }
-
-
-        .colus {
-            font-family: colus;
-            font-size: 1.3em;
-            color: #555555;
-        }
-
-        .jumbotron {
-            background-image: url("{% static 'jumbotron_logo.jpg' %}");
-            background-size: cover;
-            height: 400px;
-        }
-
-
+        @import url('https://fonts.googleapis.com/css?family=Merriweather');
 
     </style>
 </head>
@@ -43,75 +25,72 @@
 <div class="container h-100 bg-light text-center rounded shadow">
 
 
-    <div class="row pt-5" style="margin-top: 15vh;">
-        <div class="col-md-6">
+    <div class="row pt-3" style="margin-top: 15vh;">
+        <div class="col-md-5 pb-3">
 
-            <img src="{% static 'logos/38941059.png' %}" class="img-fluid p-0 m-0 w-100 rounded">
-            <br/><br/><br/>
+            <img src="{% static 'IMG_86201.JPG' %}" class="rounded" width="99%" alt="Picture">
+
 
         </div>
 
 
-        <div class="col-md-6 text-left">
-            <p class="border-bottom" style="font-family: colus; color: #7d0000;">About</p><br/>
-            <ul>
+        <div class="col-md-7 text-left" style="font-family: Merriweather, sans-serif; ">
+            <p class="border-bottom" style="font-size: 1.5em; color: #7d0000;">
+                <strong>About</strong></p><br/>
+            <ul class="pl-5">
                 <li>
-                    <strong>IVAN</strong>
+                    <strong>Ivan</strong>
                 </li>
                 <li>
-                    <strong>AUCKLAND, NZ</strong>
+                    <strong>Auckland, NZ</strong>
                 </li>
                 <li>
-                    <strong>SOFTWARE DEVELOPER</strong>
-                </li>
-            </ul>
-            <br/><br/>
-
-            <p class="border-bottom" style="font-family: colus; color: #7d0000;">Skills</p><br/>
-            <ul>
-                <li>
-                    <strong>PYTHON + DJANGO & FLASK + CELERY, REDIS</strong>
-                </li>
-                <li>
-                    <strong>HTML/CSS, JAVASCRIPT, RDBMS</strong>
-                </li>
-                <li>
-                    <strong>RESTful APIs</strong>
+                    <strong>Software Developer</strong>
                 </li>
             </ul>
             <br/><br/>
 
+            <p class="border-bottom" style="font-size: 1.5em; color: #7d0000;">
+                <strong>Skills</strong></p><br/>
+            <ul class="pl-5">
+                {% for job in jobs %}
+                <li>
+                    <strong>{{ job.summary }}</strong>
+                </li>
+                {% endfor %}
+            </ul>
+            <br/>
 
-            <p class="border-bottom" style="font-family: colus; color: #7d0000;">Links</p><br/>
-            <ul>
+
+            <p class="border-bottom" style="font-size: 1.5em; color: #7d0000;">
+                <strong>Links</strong></p><br/>
+            <ul class="pl-5">
                 <li><a href="http://spiritoftasman.com" class="text-info" target="_blank"><strong>INTERNSHIP
                     PROJECT</strong></a></li>
                 <li><a href="{% static 'resume.pdf' %}" class="text-info"><strong>RESUME</strong></a></li>
                 <li><a href="{% url 'allblogs' 1 %}" class="text-info" target="_blank"><strong>BLOG</strong></a></li>
 
             </ul>
+
+            <a href="http://vk.com/ivaneresko" target="_blank" class="pl-5"><img src="{% static 'logos/vk.png' %}"
+                                                                    onmouseover="this.src='{% static 'logos/vk2.png' %}'"
+                                                                    onmouseout="this.src='{% static 'logos/vk.png' %}'"
+                                                                    width="6%"></a>
+            <a href="https://www.facebook.com/profile.php?id=100019021544687" target="_blank"><img
+                    src="{% static 'logos/iconfinder_facebook_circle_black_107153.png' %}"
+                    onmouseover="this.src='{% static 'logos/iconfinder_facebook_circle_color_107175.png' %}'"
+                    onmouseout="this.src='{% static 'logos/iconfinder_facebook_circle_black_107153.png' %}'"
+                    width="7%"></a>
+            <a href="mailto:ivan@programmer.net" target="_blank"><img src="{% static 'logos/email.png' %}"
+                                                                      onmouseover="this.src='{% static 'logos/email2.png' %}'"
+                                                                      onmouseout="this.src='{% static 'logos/email.png' %}'"
+                                                                      width="6%"></a>
+            <a href="http://github.com/yaquake" class="pl-1" target="_blank"><img src="{% static 'logos/github.png' %}"
+                                                                                  onmouseover="this.src='{% static 'logos/github2.png' %}'"
+                                                                                  onmouseout="this.src='{% static 'logos/github.png' %}'"
+                                                                                  width="6%"></a>
         </div>
     </div>
-    <a href="http://vk.com/ivaneresko" target="_blank"><img src="{% static 'logos/vk.png' %}"
-                                                            onmouseover="this.src='{% static 'logos/vk2.png' %}'"
-                                                            onmouseout="this.src='{% static 'logos/vk.png' %}'"
-                                                            width="6%"></a>
-    <a href="https://www.facebook.com/profile.php?id=100019021544687" target="_blank"><img
-            src="{% static 'logos/iconfinder_facebook_circle_black_107153.png' %}"
-            onmouseover="this.src='{% static 'logos/iconfinder_facebook_circle_color_107175.png' %}'"
-            onmouseout="this.src='{% static 'logos/iconfinder_facebook_circle_black_107153.png' %}'"
-            width="7%"></a>
-    <a href="mailto:ivan@programmer.net" target="_blank"><img src="{% static 'logos/email.png' %}"
-                                                              onmouseover="this.src='{% static 'logos/email2.png' %}'"
-                                                              onmouseout="this.src='{% static 'logos/email.png' %}'"
-                                                              width="6%"></a>
-    <a href="http://github.com/yaquake" class="pl-1" target="_blank"><img src="{% static 'logos/github.png' %}"
-                                                                          onmouseover="this.src='{% static 'logos/github2.png' %}'"
-                                                                          onmouseout="this.src='{% static 'logos/github.png' %}'"
-                                                                          width="6%"></a>
-    <br/><br/><br/>
-
-
 </div>
 
 
