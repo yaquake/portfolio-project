@@ -18,7 +18,26 @@
     <style>
         @import url('https://fonts.googleapis.com/css?family=Merriweather');
 
+
+        @media all and (max-width: 790px) {
+
+            .main {
+
+            }
+
+        }
+
+        @media all and (min-width: 791px) {
+
+            .main {
+                margin-top: 15vh;
+            }
+        }
+
+
     </style>
+
+
 </head>
 
 <body class="bg-dark">
@@ -26,10 +45,27 @@
 <div class="container h-100 bg-light text-center rounded shadow">
 
 
-    <div class="row pt-3" style="margin-top: 15vh;">
+    <div class="row pt-3 main">
         <div class="col-md-5 pb-3">
 
-            <img src="{% static 'IMG_86201.JPG' %}" class="rounded" width="99%" alt="Picture">
+            <img src="{% static 'IMG_86201.JPG' %}" class="rounded" width="99%" alt="Picture"><br/><br/>
+            <a href="http://vk.com/ivaneresko" target="_blank"><img src="{% static 'logos/vk.png' %}"
+                                                                    onmouseover="this.src='{% static 'logos/vk2.png' %}'"
+                                                                    onmouseout="this.src='{% static 'logos/vk.png' %}'"
+                                                                    width="10%"></a>
+            <a href="https://www.facebook.com/profile.php?id=100019021544687" target="_blank"><img
+                    src="{% static 'logos/iconfinder_facebook_circle_black_107153.png' %}"
+                    onmouseover="this.src='{% static 'logos/iconfinder_facebook_circle_color_107175.png' %}'"
+                    onmouseout="this.src='{% static 'logos/iconfinder_facebook_circle_black_107153.png' %}'"
+                    width="11%"></a>
+            <a href="mailto:ivan@programmer.net" target="_blank"><img src="{% static 'logos/email.png' %}"
+                                                                      onmouseover="this.src='{% static 'logos/email2.png' %}'"
+                                                                      onmouseout="this.src='{% static 'logos/email.png' %}'"
+                                                                      width="10%"></a>
+            <a href="http://github.com/yaquake" class="pl-1" target="_blank"><img src="{% static 'logos/github.png' %}"
+                                                                                  onmouseover="this.src='{% static 'logos/github2.png' %}'"
+                                                                                  onmouseout="this.src='{% static 'logos/github.png' %}'"
+                                                                                  width="10%"></a>
 
 
         </div>
@@ -73,23 +109,7 @@
 
             </ul>
 
-            <a href="http://vk.com/ivaneresko" target="_blank" class="pl-5"><img src="{% static 'logos/vk.png' %}"
-                                                                                 onmouseover="this.src='{% static 'logos/vk2.png' %}'"
-                                                                                 onmouseout="this.src='{% static 'logos/vk.png' %}'"
-                                                                                 width="6%"></a>
-            <a href="https://www.facebook.com/profile.php?id=100019021544687" target="_blank"><img
-                    src="{% static 'logos/iconfinder_facebook_circle_black_107153.png' %}"
-                    onmouseover="this.src='{% static 'logos/iconfinder_facebook_circle_color_107175.png' %}'"
-                    onmouseout="this.src='{% static 'logos/iconfinder_facebook_circle_black_107153.png' %}'"
-                    width="7%"></a>
-            <a href="mailto:ivan@programmer.net" target="_blank"><img src="{% static 'logos/email.png' %}"
-                                                                      onmouseover="this.src='{% static 'logos/email2.png' %}'"
-                                                                      onmouseout="this.src='{% static 'logos/email.png' %}'"
-                                                                      width="6%"></a>
-            <a href="http://github.com/yaquake" class="pl-1" target="_blank"><img src="{% static 'logos/github.png' %}"
-                                                                                  onmouseover="this.src='{% static 'logos/github2.png' %}'"
-                                                                                  onmouseout="this.src='{% static 'logos/github.png' %}'"
-                                                                                  width="6%"></a>
+
         </div>
     </div>
 </div>
