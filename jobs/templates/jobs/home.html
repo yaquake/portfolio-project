@@ -24,6 +24,9 @@
             .main {
 
             }
+            .captions {
+                text-align: center;
+            }
 
         }
 
@@ -31,6 +34,10 @@
 
             .main {
                 margin-top: 15vh;
+            }
+
+            .captions {
+                text-align: left;
             }
         }
 
@@ -71,43 +78,49 @@
         </div>
 
 
-        <div class="col-md-7 text-left" style="font-family: Merriweather, sans-serif; ">
+        <div class="col-md-7 captions" style="font-family: Merriweather, sans-serif; ">
             <p class="border-bottom" style="font-size: 1.5em; color: #7d0000;">
                 <strong>About</strong></p><br/>
-            <ul class="pl-5">
-                <li>
-                    <strong>Ivan</strong>
-                </li>
-                <li>
-                    <strong>Auckland, NZ</strong>
-                </li>
-                <li>
-                    <strong>Software Developer</strong>
-                </li>
-            </ul>
+{#            <ul class="pl-5">#}
+{#                <li>#}
+                    <strong>Ivan</strong><br />
+{#                </li>#}
+{#                <li>#}
+                    <strong>Auckland, NZ</strong><br />
+{#                </li>#}
+{#                <li>#}
+                    <strong>Software Developer</strong><br />
+{#                </li>#}
+{#            </ul>#}
             <br/><br/>
 
             <p class="border-bottom" style="font-size: 1.5em; color: #7d0000;">
                 <strong>Skills</strong></p><br/>
-            <ul class="pl-5">
+{#            <ul class="pl-5">#}
                 {% for job in jobs %}
-                    <li>
-                        <strong>{{ job.summary }}</strong>
-                    </li>
+{#                    <li>#}
+                        <strong>{{ job.summary }}</strong><br />
+{#                    </li>#}
                 {% endfor %}
-            </ul>
+{#            </ul>#}
             <br/>
 
 
             <p class="border-bottom" style="font-size: 1.5em; color: #7d0000;">
                 <strong>Links</strong></p><br/>
-            <ul class="pl-5">
-                <li><a href="https://mpm.kiwi" class="text-info" target="_blank"><strong>INTERNSHIP
-                    PROJECT</strong></a></li>
-                <li><a href="{% static 'Ivan_Eresko_resume.docx' %}" class="text-info"><strong>RESUME</strong></a></li>
-                <li><a href="{% url 'allblogs' 1 %}" class="text-info" target="_blank"><strong>BLOG</strong></a></li>
-
-            </ul>
+{#            <ul class="pl-5">#}
+{#                <li>#}
+                    <a href="https://mpm.kiwi" class="text-info" target="_blank"><strong>INTERNSHIP
+                    PROJECT</strong></a><br />
+{#            </li>#}
+{#                <li>#}
+                    <a href="{% static 'Ivan_Eresko_resume.docx' %}" class="text-info"><strong>RESUME</strong></a><br />
+{#                </li>#}
+{#                <li>#}
+                    <a href="{% url 'allblogs' 1 %}" class="text-info" target="_blank"><strong>BLOG</strong></a><br /><br /><br />
+{#                </li>#}
+{##}
+{#            </ul>#}
 
 
         </div>
